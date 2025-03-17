@@ -61,11 +61,14 @@ export default function Home() {
     });
   }, []);
 
+  const filteredPokemon = pokemon.sort((a, b) => language ? a.name.fr.localeCompare(b.name.fr): a.name.en.localeCompare(b.name.en))
+
   return (
     <div className="bg-yellow-300">
       <header className="w-full flex items-center justify-center">
         <div>
           <Image src={logo} alt="pokedex" className="ml-20"/>
+          
           <input
             type="text"
             placeholder="Recherche..."
@@ -82,8 +85,8 @@ export default function Home() {
           </button>
         </div>
       </header>
-      <div className="grid grid-cols-4 items-center justify-items-center min-h-screen p-8 pb-20 gap-4 sm:p-20">
-        {pokemon.map(p => (
+      <div className="grid grid-cols-6 items-center justify-items-center min-h-screen p-8 pb-20 gap-4 sm:p-20">
+        {filteredPokemon.map(p => (
           <PokemonCard key={p.id} pokemon={p} types={types} shiny={true} language={language}/>
         ))}
       </div>
