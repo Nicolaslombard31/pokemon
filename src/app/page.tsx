@@ -114,23 +114,22 @@ export default function Home() {
 
   return (
     <div className="bg-yellow-300">
+      <Image src={logo} alt="pokedex" className="ml-130" priority />
       <header className="w-full flex items-center justify-center">
-        <div>
-          <Image src={logo} alt="pokedex" className="ml-130" priority />
-
+        <div className="bg-[#F9DF7D] rounded-2xl shadow-md p-4 m-4 flex flex-wrap items-center justify-center gap-4">
           <select
             value={sortOrder}
             onChange={handleSortChange}
             className="mr-4 ml-4 p-2 border border-gray-300 rounded"
           >
-            <option value="n_asc">{language ? '# Growing' : '# Croissant'}</option>
-            <option value="n_desc">{language ? '# Decreasing' : '# Décroissant'}</option>
-            <option value="name_asc">{language ? 'Name growing' : 'Nom Croissant'}</option>
-            <option value="name_desc">{language ? 'Name Decreasing' : 'Nom Décroissant'}</option>
-            <option value="weight_asc">{language ? 'Weight growing' : 'Poids Croissant'}</option>
-            <option value="weight_desc">{language ? 'Weight Decreasing' : 'Poids Décroissant'}</option>
-            <option value="height_asc">{language ? 'Size growing' : 'Taille Croissant'}</option>
-            <option value="height_desc">{language ? 'Size Decreasing' : 'Taille Décroissant'}</option>
+            <option value="n_asc">{language ? '# ascending' : '# Croissant'}</option>
+            <option value="n_desc">{language ? '# descending' : '# Décroissant'}</option>
+            <option value="name_asc">{language ? 'Name ascending' : 'Nom Croissant'}</option>
+            <option value="name_desc">{language ? 'Name descending' : 'Nom Décroissant'}</option>
+            <option value="weight_asc">{language ? 'Weight ascending' : 'Poids Croissant'}</option>
+            <option value="weight_desc">{language ? 'Weight descending' : 'Poids Décroissant'}</option>
+            <option value="height_asc">{language ? 'Height ascending' : 'Taille Croissant'}</option>
+            <option value="height_desc">{language ? 'Height descending' : 'Taille Décroissant'}</option>
           </select>
 
           <input
@@ -166,13 +165,21 @@ export default function Home() {
           </select>
 
 
-          <button onClick={choiceLanguage}>
-            <Image src={language ? logo2 : logo1} alt="francais" className="w-20" />
+          <button 
+          onClick={choiceLanguage} 
+          className="p-2 border border-gray-300 rounded h-[42px] flex items-center justify-center"
+          >
+            <Image 
+              src={language ? logo2 : logo1} 
+              alt="langue" 
+              className="w-6 h-6" 
+            />
           </button>
+
         </div>
       </header>
       
-      <div className="grid grid-cols-6 items-center justify-items-center min-h-screen p-8 pb-20 gap-4 sm:p-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6 p-4 sm:p-8">
         {filteredPokemon.map(p => (
           <PokemonCard key={p.id} pokemon={p} types={types} shiny={true} language={language} />
         ))}

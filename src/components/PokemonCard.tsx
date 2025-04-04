@@ -67,8 +67,8 @@ export default function PokemonCard({pokemon, types, language}: PokemonCardProps
                                     <p className='border border-black w-20'>{language ? 'HP' : 'PV'}: {selectedPokemon.stats.hp}</p>
                                     <p className='border border-black w-20'>{language ? 'Attack' : 'Attaque'}: {selectedPokemon.stats.atk}</p>
                                     <p className='border border-black w-20'>{language ? 'Defense' : 'Défense'}: {selectedPokemon.stats.def}</p>
-                                    <p className='border border-black w-20'>{language ? 'Specail Atk' : 'Attaque Spe'}: {selectedPokemon.stats.spe_atk}</p>
-                                    <p className='border border-black w-20'>{language ? 'Specail Def' : 'Défense Spe'}: {selectedPokemon.stats.spe_def}</p>
+                                    <p className='border border-black w-20'>{language ? 'Special Atk' : 'Attaque Spe'}: {selectedPokemon.stats.spe_atk}</p>
+                                    <p className='border border-black w-20'>{language ? 'Special Def' : 'Défense Spe'}: {selectedPokemon.stats.spe_def}</p>
                                     <p className='border border-black w-20'>{language ? 'Speed' : 'Vitesse'}: {selectedPokemon.stats.vit}</p>
                                 </ul>
                             </div>
